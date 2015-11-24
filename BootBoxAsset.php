@@ -28,22 +28,4 @@ class BootBoxAsset extends AssetBundle
     public $depends = [
         'yii\bootstrap\BootstrapAsset',
     ];
-
-    public function init()
-    {
-        parent::init();
-
-        Yii::$app->view->registerJs('
-            yii.confirm = function(message, ok, cancel) {
-                bootbox.confirm(message, function(result) {
-                    if (result) {
-                        !ok || ok();
-                    }
-                    else {
-                        !cancel || cancel();
-                    }
-                });
-            }
-        ');
-    }
 } 
